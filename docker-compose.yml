@@ -1,8 +1,11 @@
 version: '3.7'
+
 volumes:
   nextcloud:
   database:
+
 services:
+
   proxy:
     restart: always
     image: proxy
@@ -13,9 +16,11 @@ services:
     depends_on:
       - nextcloud
       - flexfactory
+
   flexfactory:
     restart: always
     image: nginx
+
   nextcloud:
     restart: always
     image: nextcloud
