@@ -30,6 +30,7 @@ services:
       - database
     volumes:
       - nextcloud:/var/www/html
+
   database:
     restart: always
     image: mariadb
