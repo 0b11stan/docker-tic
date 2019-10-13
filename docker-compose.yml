@@ -19,7 +19,7 @@ services:
 
   flexfactory:
     restart: always
-    image: nginx
+    image: flexfactory
 
   nextcloud:
     restart: always
