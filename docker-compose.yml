@@ -3,7 +3,6 @@ version: '3.7'
 volumes:
   nextcloud:
   database:
-  letsencrypt:
 
 services:
 
