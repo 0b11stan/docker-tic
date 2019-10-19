@@ -2,7 +2,13 @@ version: '3.7'
 
 volumes:
   nextcloud:
+    external: true
   database:
+    external: true
+  letsencrypt-config:
+    external: true
+  letsencrypt-data:
+    external: true
 
 services:
 
@@ -16,6 +22,9 @@ services:
     depends_on:
       - nextcloud
       - flexfactory
+    volumes:
+      - letsencrypt-data:/srv/letsencrypt
+      - letsencrypt-config:/etc/letsencrypt
 
   flexfactory:
     restart: always
