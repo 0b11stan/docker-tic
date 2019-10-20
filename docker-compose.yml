@@ -9,6 +9,8 @@ volumes:
     external: true
   letsencrypt-data:
     external: true
+  letsencrypt-dh:
+    external: true
 
 services:
 
@@ -26,6 +28,7 @@ services:
     volumes:
       - letsencrypt-data:/srv/letsencrypt
       - letsencrypt-config:/etc/letsencrypt
+      - letsencrypt-dh:/etc/ssl/certs
 
   flexfactory:
     restart: always
