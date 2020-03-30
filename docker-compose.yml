@@ -1,15 +1,10 @@
 version: '3.7'
 
 volumes:
-  letsencrypt-config:
-    external: true
-  letsencrypt-data:
-    external: true
-  letsencrypt-dh:
-    external: true
+  letsencrypt:
+  gogs:
 
 services:
-
   proxy:
     restart: always
     build: ./proxy
@@ -18,11 +13,23 @@ services:
       - 443:443
     depends_on:
       - flexfactory
+      - static
+      - gogs
     volumes:
-      - letsencrypt-data:/srv/letsencrypt
-      - letsencrypt-config:/etc/letsencrypt
-      - letsencrypt-dh:/etc/ssl/certs
+      - letsencrypt:/etc/letsencrypt
 
   flexfactory:
     restart: always
     build: ./flexfactory
+
+  static:
+    restart: always
+    build: ./static
+
+  gogs:
+    restart: always
+    image: gogs/gogs
+    ports:
+      - "2222:22"
+    volumes:
+      - gogs:/data
