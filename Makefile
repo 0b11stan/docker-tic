@@ -8,6 +8,7 @@ debug:
 
 up:
 	$(CMD) up -d
+	$(CMD) exec proxy certbot-auto --nginx
 
 down:
 	$(CMD) down
