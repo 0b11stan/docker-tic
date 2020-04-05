@@ -39,5 +39,11 @@ services:
   matrix:
     restart: always
     image: matrixdotorg/synapse
+    ports:
+      - 8448:8448
+    environment:
+      UID: 0
+      GID: 0
     volumes:
       - matrix:/data
+      - letsencrypt:/etc/letsencrypt:ro
