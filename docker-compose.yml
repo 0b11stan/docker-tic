@@ -3,6 +3,7 @@ version: '3.7'
 volumes:
   letsencrypt:
   gogs:
+  matrix:
 
 services:
   proxy:
@@ -33,3 +34,9 @@ services:
       - "2222:22"
     volumes:
       - gogs:/data
+
+  matrix:
+    restart: always
+    image: matrixdotorg/synapse
+    volumes:
+      - matrix:/data
