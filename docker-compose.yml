@@ -16,6 +16,7 @@ services:
       - flexfactory
       - static
       - gogs
+      - matrix
     volumes:
       - letsencrypt:/etc/letsencrypt
 
