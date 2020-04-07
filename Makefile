@@ -21,7 +21,7 @@ matrix:
 matrix_user:
 	$(CMD) exec matrix \
 		register_new_matrix_user \
-		-c homeserver.yaml \
+		-c /data/homeserver.yaml \
 		http://localhost:8008
 
 certbot:
