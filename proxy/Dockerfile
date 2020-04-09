@@ -9,3 +9,4 @@ COPY tic.sh.conf /etc/nginx/conf.d
 COPY git.tic.sh.conf /etc/nginx/conf.d
 COPY sta.tic.sh.conf /etc/nginx/conf.d
 COPY mtx.tic.sh.conf /etc/nginx/conf.d
+COPY gh.tic.sh.conf /etc/nginx/conf.d
