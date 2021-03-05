@@ -1,0 +1,15 @@
+http://tic.sh {
+  reverse_proxy flexfactory
+}
+
+http://sta.tic.sh {
+  reverse_proxy static
+}
+
+#git.tic.sh {
+#  reverse_proxy sourcehut
+#}
+
+#gh.tic.sh {
+#  redir https://github.com/0b11stan
+#}
